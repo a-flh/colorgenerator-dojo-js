@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+}
+td, .palette-item {
+    width: 2rem;
+    height: 2rem;
+    border: solid 1px black;
+}
+
+.palette-item {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.red {
+    background-color : red;
+}
+.yellow {
+    background-color : gold;
+}
+.green {
+    background-color : forestgreen;
+}
+.blue {
+    background-color : dodgerblue;
+}
+.black {
+    background-color : black;
+}
