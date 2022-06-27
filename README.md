@@ -1,15 +1,35 @@
-# Pixel Art
+# Exercice
 
-The purpose of this dojo is to create a canvas on which the user can express his talents as a pixel artist.
-A __style.css__ file is available and contains all the classes necessary for the realization. It is only necessary to write __javascript__.
+## Pixel Art 🎯
 
-## Step 1
-In the script.js file, write the script that will generate in the application (identified by the id `#app`), a colour palette from the `colors` array.
+Le but de ce dojo est de créer une toile sur laquelle l'utilisateur peut exprimer ses talents de pixelliste. Un fichier _style.css_ est disponible et contient toutes les classes nécessaires à la réalisation. Il est seulement nécessaire d'écrire du _javascript_.
 
-## Step 2
-Write the script that will generate an html table underneath the previously generated colour palette and whose number of rows and columns will be determined by the `canvasSize` variable.
+![dojo pixel art example](./_doc/pixel-art-example.png)
 
-## Step 3
-When the user selects a colour from the palette, they can draw pixel by pixel in the canvas.
+## Étape 1️
 
-![dojo pixel art example](https://github.com/WildCodeSchool/dojo-js-pixel-art/blob/master/pixel-art-example.png?raw=true)
+Dans le fichier script.js, écrivez le script qui va générer dans l'application (identifiée par l'id `#app`), une palette de couleurs à partir du tableau `colors`.
+
+## Étape 2️
+
+Ecrivez le script qui va générer un tableau html sous la palette de couleurs générée précédemment et dont le nombre de lignes et de colonnes sera déterminé par la variable `canvasSize`.
+
+## Étape 3️
+
+Lorsque l'utilisateur sélectionne une couleur dans la palette, il peut dessiner pixel par pixel dans le canevas.
+
+---
+
+## Bonus 🚀
+
+Si vous avez des idées et des implémentation supplémentaire, n'hésitez pas à vous amuser... C'est comme ça qu'on apprend ! ❤️
+
+---
+
+# Author
+
+👤 [JFM](https://github.com/jfm-wcs)
+
+Traduit et adaptée par
+
+👤 [Anthony](https://twitter.com/Gorski_anthony)
