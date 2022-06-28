@@ -54,6 +54,7 @@ function generateColorPalet() {
 
   for (let i = 0; i < colors.length; i++) {
     const color = document.createElement("td");
+    color.style.cursor = "pointer";
     /**
      * - Je vais donner un style à ma td couleur hauteur/largeur
      * doc: https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener
@@ -86,15 +87,22 @@ function generateColorPalet() {
  */
 function generateGrid(sizeGrid) {
   const table = document.createElement("table");
+  //table.classList.add("palette-item");
   // Je créer ma ligne qui contiendra mes cellules
   for (let i = 0; i < sizeGrid; i++) {
     const row = document.createElement("tr");
     // Je créer chaque cellule
     for (let j = 0; j < sizeGrid; j++) {
       const cell = document.createElement("td");
-      cell.classList.add(".palette-item");
       cell.addEventListener("click", () => {
-        cell.classList.add(picker);
+        if (picker) {
+          // Je supprime toutes les classes présentes dans mon td
+          cell.classList.remove(...cell.classList);
+          // j'ajoute la class du picker
+          cell.classList.add(picker);
+        } else {
+          alert("Veuillez choisir une couleur");
+        }
       });
       row.appendChild(cell);
     }
@@ -103,6 +111,33 @@ function generateGrid(sizeGrid) {
   app.appendChild(table);
 }
 
+/**
+ * function clearGrid
+ * @desc permet de clear la grille quand celle ci est appelée
+ */
+function clearGrid() {
+  const cells = document.querySelectorAll("table td");
+  cells.forEach((cell) => {
+    cell.classList.remove(...cell.classList);
+  });
+}
+
+/**
+ * function clearButton
+ * @desc création du button pour reset l'ensemble du tableau.
+ * Celui ci va appeler la fonction `clearGrid` quand le button sera cliqué.
+ */
+function clearButton() {
+  const button = document.createElement("button");
+  button.style.width = "4rem";
+  button.innerHTML = "Clear";
+  button.addEventListener("click", () => {
+    clearGrid();
+  });
+  app.appendChild(button);
+}
+
 /** Génération du pixel Art */
 generateColorPalet();
 generateGrid(canvasSize);
+clearButton();
