@@ -6,11 +6,6 @@ const canvasSize = 10;
 const size = "2rem";
 
 /**
- * Rotation: Anthony -> Gloria -> Audren
- * Temps: 3 min
- * Handicap: Anthony 1m
- */
-/**
  *
  * Etape 1 ✅
  *
