@@ -1,9 +1,9 @@
 const app = document.getElementById("app");
 const colors = ["red", "yellow", "green", "blue", "black"];
 let picker = "";
-const canvasSize = 11;
+const canvasSize = 10;
 /** Ajout de variable pour une modification plus simple */
-const size = "2.5rem";
+const size = "2rem";
 
 /**
  * Rotation: Anthony -> Gloria -> Audren
@@ -27,9 +27,18 @@ const size = "2.5rem";
  * - je rajoute la div à l'app
  *
  *
- * Etape 2
+ * Etape 2 ✅
  *
- * créer la grille
+ * - Créer la grille container
+ * - Créer un tableau à 2 dimensions (x, y) qui aura la taille de canvasSize.
+ * - On rajoute les evenements sur chaque cellule du tableau.
+ * - On rajoute les cellules à la ligne
+ * - On ajoute la ligne à notre table
+ * - On ajoute notre table à notre app
+ *
+ * Etape 3
+ *
+ * - Création d'un bouton pour réinitialiser le canva
  * -
  *
  */
@@ -69,5 +78,31 @@ function generateColorPalet() {
   app.appendChild(container);
 }
 
+/**
+ * function generateGrid
+ * @desc permet de créer une div qui contiendra
+ * le tableau.
+ * @param sizeGrid la taille du tableau
+ */
+function generateGrid(sizeGrid) {
+  const table = document.createElement("table");
+  // Je créer ma ligne qui contiendra mes cellules
+  for (let i = 0; i < sizeGrid; i++) {
+    const row = document.createElement("tr");
+    // Je créer chaque cellule
+    for (let j = 0; j < sizeGrid; j++) {
+      const cell = document.createElement("td");
+      cell.classList.add(".palette-item");
+      cell.addEventListener("click", () => {
+        cell.classList.add(picker);
+      });
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+  app.appendChild(table);
+}
+
 /** Génération du pixel Art */
 generateColorPalet();
+generateGrid(canvasSize);
